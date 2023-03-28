@@ -6,10 +6,11 @@
     height: 400px;
     width: 100%;
     /* margin: auto; */
-    background-color: orange;
-  }
+     background-color: orange; 
+    background-image: url("45-degree-fabric-light.png");
+}
 
-  .header__image{ 
+.header__image{ 
     width: 100px;
     height: 100px;
   }
@@ -18,7 +19,7 @@
     margin: 0;
     /* width: fit-content; */
   }
-  
+
   .name {
     text-align: center;
   }
