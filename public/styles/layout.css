@@ -31,6 +31,11 @@ main {
   margin: auto;
   background-color: #f4f1ec;
 }
+.counter-negative {
+  color: red;
+  font-weight: bold;
+} 
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
