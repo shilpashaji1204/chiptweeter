@@ -36,6 +36,10 @@ main {
   font-weight: bold;
 } 
 
+#tweets-container {
+  margin-top: 1em;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
