@@ -34,21 +34,14 @@ const escape = function (str) {
 };
 
 const loadTweets = function () {
-    // const $button = $('.new-tweet__button');
-    // $button.on('click', function () {
-    //     console.log('Button clicked, performing ajax call ..');
-    // });
-    // const $container = $('#tweets-container');
-    // $container.empty();
     $('#tweets-container').empty();
     //AJAX GET request to fetch the tweets
-
     $.ajax({
         method: "GET",
         url: "/tweets",
         type: "json",
         success: function (tweets) {
-            renderTweets(tweets);      //rendering them to the webpage
+            renderTweets(tweets);
         }
     });
 };
@@ -67,8 +60,6 @@ const renderTweets = function (tweets) {
 }
 
 $(document).ready(function () {
-// fetching tweets from the server using ajax GET request
-    
 
     $('form').on('submit', function (event) {
         event.preventDefault();
@@ -95,7 +86,7 @@ $(document).ready(function () {
             type: "application/json",
             data: dataObj,
             success: function () {
-                loadTweets();          
+                loadTweets();
                 $tweetText.val("");
                 console.log("posting success");
             }

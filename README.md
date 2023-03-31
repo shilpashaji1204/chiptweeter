@@ -6,26 +6,21 @@ Tweeter is a simple, single-page AJAX - based Twitter clone that uses jQuery,HTM
 
 1. Final page 
 
-<img width="1470" alt="Final page" src="https://user-images.githubusercontent.com/121919958/229019741-9fbba2de-9abf-4ba9-834f-0509b6abe731.png">
-
+<img width="1470" alt="finalpage" src="https://user-images.githubusercontent.com/121919958/229194969-783ca449-417e-45c9-b028-460e88db3c0c.png">
 
 
 2. New Tweet 
 
-<img width="1469" alt="newtweet" src="https://user-images.githubusercontent.com/121919958/229019578-ff0250b6-96c1-4a6f-a13b-86c3feba5bdd.png">
 
 
 3.Display Validation Error check
 
-<img width="1201" alt="validation checking" src="https://user-images.githubusercontent.com/121919958/229019486-cb649f05-73fb-4b2b-9b20-590227edfc03.png">
 
 4. Cross Site Scripting (XSS checking)
 
-<img width="1465" alt="XXSchecking" src="https://user-images.githubusercontent.com/121919958/229019682-ce47fcb7-3c5f-4409-9d42-631985e3bfd9.png">
 
 5. iPhone 12 pro display
 
-<img width="1004" alt="iphone12proview" src="https://user-images.githubusercontent.com/121919958/229020040-169babc4-4cf6-4bdf-8f54-fde3a00c61ba.png">
 
 ## Getting Started
 
