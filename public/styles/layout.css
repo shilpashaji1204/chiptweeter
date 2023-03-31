@@ -30,6 +30,7 @@ main {
   width: 90%;
   margin: auto;
   background-color: #f4f1ec;
+  margin-top: 150px;
 }
 .counter-negative {
   color: red;
@@ -43,3 +44,13 @@ main {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+ @media screen and (min-width: 1024px)  {
+
+  body {
+    display: flex;
+    }
+    
+  main {
+    width: 60%;
+  }
+ }

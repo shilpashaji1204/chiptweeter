@@ -14,7 +14,7 @@ const createTweetElement = function (tweet) {
       <p class="tweet-author-username">${user.handle}</p>
     </header>
     <div class="tweet-content">
-      <p class="tweet-text1"> ${content.text}</p>
+      <p class="tweet-text1"> ${escape(content.text)}</p>
     </div>
     <div class="new-tweetline1"></div>
     <output name="counter1" class="counter1" for="tweet-text1">${created_at}</output>
@@ -26,43 +26,78 @@ const createTweetElement = function (tweet) {
   </article>`)
     return $tweet
 }
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = [{
-    "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-    },
-    "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-},
-{
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1680033989069
-  }]
+
+const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+};
+
 $(document).ready(function () {
+
+    const loadTweets = function () {
+        const $button = $('.new-tweet__button');
+        $button.on('click', function () {
+            console.log('Button clicked, performing ajax call ..');
+        });
+
+        $.ajax({
+            method: "GET",
+            url: "/tweets",
+            type: "json",
+            success: function (tweets) {
+                renderTweets(tweets);
+            }
+        });
+    };
+
+    $('form').on('submit', function (event) {
+        event.preventDefault();
+        $('.error_message').hide();
+        console.log($(this).serialize());
+        const $tweetText = $(this).find("textarea");
+        const tweetContent = $tweetText.val().trim();
+
+        if (!tweetContent) {
+            $('.error_message').text("Tweet content cannot be empty!").slideDown();
+            return;
+        }
+
+        if (tweetContent.length > 140) {
+            $('.error_message').text("Tweet content is too long.").slideDown();
+            return;
+        }
+
+        const dataObj = { text: tweetContent };
+
+        $.ajax({
+            method: "POST",
+            url: "/tweets",
+            type: "application/json",
+            data: dataObj,
+            success: function () {
+                loadTweets();
+                $tweetText.val("");
+            }
+        });
+    });
+
+
     const renderTweets = function (tweets) {
         console.log(tweets);
         for (tweet of tweets) {
             const $tweet = createTweetElement(tweet);
-
+            const timeAgo = timeago.format(tweet.created_at);
+            $tweet.find('.counter1').text(timeAgo);
             // Test / driver code (temporary)
             console.log($tweet); // to see what it looks like
-            $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+            $('#tweets-container').prepend($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
         }
         return;
     }
-    renderTweets(tweetData);
-        })
+    // renderTweets(tweetData);
+    loadTweets();
+});
 
 
 

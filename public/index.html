@@ -1,63 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js" defer></script>
-  </head>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="scripts/composer-char-counter.js" defer></script>
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-      <div class="tweet">
-        <span>Write a new tweet</span>
-        <i class="fas fa-angle-double-down"></i>
-      </div>
-    </nav>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
 
-    <header class="header">
-        <img class="header__image" src="/images/profile-hex.png" /> 
-        <br/>
-        <h2 class="header__name">Shilpa Shaji</h2>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form action="/tweets" method="post">
-          <textarea
-            name="text"
-            id="tweet-text"
-            placeholder="What are you humming about ?"
-          ></textarea>
-          <div class="new-tweetline"></div>
-          <div class="new-tweetfooter">
-            <button class="new-tweet__button" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-      <section id="tweets-container">
-        <!-- <article class="tweet-box">
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span>tweeter</span>
+    <div class="tweet">
+      <span>Write a new tweet</span>
+      <i class="fas fa-angle-double-down"></i>
+    </div>
+  </nav>
+
+  <header class="header">
+    <img class="header__image" src="/images/profile-hex.png" />
+    <br />
+    <h2 class="header__name">Shilpa Shaji</h2>
+  </header>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section class="new-tweet">
+      <div class ="error_message"></div>
+      <h2>Compose Tweet</h2>
+      <form action="/tweets" method="post">
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about ?"></textarea>
+        <div class="new-tweetline"></div>
+        <div class="new-tweetfooter">
+          <button class="new-tweet__button" type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+    <section id="tweets-container">
+      <!-- <article class="tweet-box">
           <header class="tweet-header">
             <div class="tweet-author">
               <img src="https://i.imgur.com/73hZDYK.png"  class="tweet-avatar">
@@ -76,7 +83,8 @@
             <i class="far fa-heart tweet-icon"></i>
           </footer>
         </article> -->
-      </section>
-    </main>
-  </body>
+    </section>
+  </main>
+</body>
+
 </html>

@@ -17,9 +17,20 @@
 
   .header__name {
     margin: 0;
-    /* width: fit-content; */
+    font-size: large;
+    
   }
 
   .name {
     text-align: center;
   }
+
+  @media screen and (min-width: 1024px) {
+
+    .header {
+    width: 25%;
+    margin-top: 350px;
+    
+}
+
+}

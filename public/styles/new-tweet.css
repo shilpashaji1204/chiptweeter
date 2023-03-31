@@ -35,7 +35,7 @@
     padding: 7px;
   }
   
-  .tweet:hover {
+  .tweet-box:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   }
   
@@ -105,5 +105,16 @@
   .tweet-icon:hover {
     color: red;
   }
+  
+  .error_message {
+    color: red;
+    border: 1px solid red;
+    font-size: medium;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 10px;
+    display: none;
+  }
+  
   
   
