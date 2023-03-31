@@ -6,7 +6,15 @@ Tweeter is a simple, single-page AJAX - based Twitter clone that uses jQuery,HTM
 
 1. Final page 
 
-https://github.com/shilpashaji1204/chiptweeter/blob/master/docs/Final%20page.png?raw=true
+https://github.com/shilpashaji1204/chiptweeter/blob/master/docs/Final%20page.png
+
+2. New Tweet 
+
+https://github.com/shilpashaji1204/chiptweeter/blob/master/docs/newtweet.png
+
+3.Display Validation Error check
+
+https://github.com/shilpashaji1204/chiptweeter/blob/master/docs/validation%20checking.png
 
 ## Getting Started
 
