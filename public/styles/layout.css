@@ -33,9 +33,8 @@ body {
 
 main {
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
   background-color: #f4f1ec;
-  margin-top: 150px;
 }
 
 .counter-negative {
