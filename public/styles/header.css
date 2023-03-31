@@ -1,36 +1,35 @@
 .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    width: 100%;
-    /* margin: auto; */
-     background-color: orange; 
-    background-image: url("45-degree-fabric-light.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 100%;
+  background-color: orange;
+  background-image: url("45-degree-fabric-light.png");
 }
 
-.header__image{ 
-    width: 100px;
-    height: 100px;
-  }
+.header__image {
+  width: 100px;
+  height: 100px;
+}
 
-  .header__name {
-    margin: 0;
-    font-size: large;
-    
-  }
+.header__name {
+  margin: 0;
+  font-size: large;
 
-  .name {
-    text-align: center;
-  }
+}
 
-  @media screen and (min-width: 1024px) {
+.name {
+  text-align: center;
+}
 
-    .header {
+@media screen and (min-width: 1024px) {
+
+  .header {
     width: 25%;
     margin-top: 350px;
-    
-}
+
+  }
 
 }

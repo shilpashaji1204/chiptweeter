@@ -26,7 +26,7 @@ const createTweetElement = function (tweet) {
   </article>`)
     return $tweet
 }
-
+// prevent cross site scripting (XSS) attacks
 const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -40,7 +40,7 @@ $(document).ready(function () {
         $button.on('click', function () {
             console.log('Button clicked, performing ajax call ..');
         });
-
+        //AJAX GET request to fetch the tweets
         $.ajax({
             method: "GET",
             url: "/tweets",
@@ -57,7 +57,7 @@ $(document).ready(function () {
         console.log($(this).serialize());
         const $tweetText = $(this).find("textarea");
         const tweetContent = $tweetText.val().trim();
-
+        // Validate tweet 
         if (!tweetContent) {
             $('.error_message').text("Tweet content cannot be empty!").slideDown();
             return;
@@ -69,7 +69,7 @@ $(document).ready(function () {
         }
 
         const dataObj = { text: tweetContent };
-
+        // submit tweet via ajax POST request
         $.ajax({
             method: "POST",
             url: "/tweets",
@@ -82,20 +82,20 @@ $(document).ready(function () {
         });
     });
 
-
+    //render an array of tweet objects onto the page
     const renderTweets = function (tweets) {
         console.log(tweets);
         for (tweet of tweets) {
             const $tweet = createTweetElement(tweet);
             const timeAgo = timeago.format(tweet.created_at);
             $tweet.find('.counter1').text(timeAgo);
-            // Test / driver code (temporary)
-            console.log($tweet); // to see what it looks like
-            $('#tweets-container').prepend($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+
+            console.log($tweet);
+            $('#tweets-container').prepend($tweet);
         }
         return;
     }
-    // renderTweets(tweetData);
+
     loadTweets();
 });
 
