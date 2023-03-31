@@ -1,8 +1,12 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page AJAX - based Twitter clone that uses jQuery,HTML,CSS, and JS. CSS is used to apply styling to HTML pages. This includes changing fonts and colors, but it also allows us to change the layout of our page. There are many ways to position and display items with CSS, and each method is appropriate for different use cases.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+# Final Screenshots
+
+1. Final page 
+
+https://github.com/shilpashaji1204/chiptweeter/blob/master/docs/Final%20page.png?raw=true
 
 ## Getting Started
 
@@ -16,3 +20,5 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- body-parser
+- chance
