@@ -34,7 +34,7 @@ const escape = function (str) {
 };
 
 $(document).ready(function () {
-
+// fetching tweets from the server using ajax GET request
     const loadTweets = function () {
         const $button = $('.new-tweet__button');
         $button.on('click', function () {
@@ -46,7 +46,7 @@ $(document).ready(function () {
             url: "/tweets",
             type: "json",
             success: function (tweets) {
-                renderTweets(tweets);
+                renderTweets(tweets);      //rendering them to the webpage
             }
         });
     };
@@ -57,7 +57,7 @@ $(document).ready(function () {
         console.log($(this).serialize());
         const $tweetText = $(this).find("textarea");
         const tweetContent = $tweetText.val().trim();
-        // Validate tweet 
+        // Validate tweet content
         if (!tweetContent) {
             $('.error_message').text("Tweet content cannot be empty!").slideDown();
             return;
@@ -76,7 +76,7 @@ $(document).ready(function () {
             type: "application/json",
             data: dataObj,
             success: function () {
-                loadTweets();
+                loadTweets();          
                 $tweetText.val("");
             }
         });

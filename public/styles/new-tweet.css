@@ -101,6 +101,7 @@
   font-size: small;
   display: flex;
   justify-content: flex-end;
+  
 }
 
 .tweet-icon:hover {
