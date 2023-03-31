@@ -33,23 +33,42 @@ const escape = function (str) {
     return div.innerHTML;
 };
 
+const loadTweets = function () {
+    // const $button = $('.new-tweet__button');
+    // $button.on('click', function () {
+    //     console.log('Button clicked, performing ajax call ..');
+    // });
+    // const $container = $('#tweets-container');
+    // $container.empty();
+    $('#tweets-container').empty();
+    //AJAX GET request to fetch the tweets
+
+    $.ajax({
+        method: "GET",
+        url: "/tweets",
+        type: "json",
+        success: function (tweets) {
+            renderTweets(tweets);      //rendering them to the webpage
+        }
+    });
+};
+
+const renderTweets = function (tweets) {
+    console.log(tweets);
+    for (tweet of tweets) {
+        const $tweet = createTweetElement(tweet);
+        const timeAgo = timeago.format(tweet.created_at);
+        $tweet.find('.counter1').text(timeAgo);
+
+        console.log($tweet);
+        $('#tweets-container').prepend($tweet);
+    }
+    return;
+}
+
 $(document).ready(function () {
 // fetching tweets from the server using ajax GET request
-    const loadTweets = function () {
-        const $button = $('.new-tweet__button');
-        $button.on('click', function () {
-            console.log('Button clicked, performing ajax call ..');
-        });
-        //AJAX GET request to fetch the tweets
-        $.ajax({
-            method: "GET",
-            url: "/tweets",
-            type: "json",
-            success: function (tweets) {
-                renderTweets(tweets);      //rendering them to the webpage
-            }
-        });
-    };
+    
 
     $('form').on('submit', function (event) {
         event.preventDefault();
@@ -78,23 +97,10 @@ $(document).ready(function () {
             success: function () {
                 loadTweets();          
                 $tweetText.val("");
+                console.log("posting success");
             }
         });
     });
-
-    //render an array of tweet objects onto the page
-    const renderTweets = function (tweets) {
-        console.log(tweets);
-        for (tweet of tweets) {
-            const $tweet = createTweetElement(tweet);
-            const timeAgo = timeago.format(tweet.created_at);
-            $tweet.find('.counter1').text(timeAgo);
-
-            console.log($tweet);
-            $('#tweets-container').prepend($tweet);
-        }
-        return;
-    }
 
     loadTweets();
 });
