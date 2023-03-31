@@ -23,6 +23,9 @@ Tweeter is a simple, single-page AJAX - based Twitter clone that uses jQuery,HTM
 
 <img width="1465" alt="XXSchecking" src="https://user-images.githubusercontent.com/121919958/229019682-ce47fcb7-3c5f-4409-9d42-631985e3bfd9.png">
 
+5. iPhone 12 pro display
+
+<img width="1004" alt="iphone12proview" src="https://user-images.githubusercontent.com/121919958/229020040-169babc4-4cf6-4bdf-8f54-fde3a00c61ba.png">
 
 ## Getting Started
 
