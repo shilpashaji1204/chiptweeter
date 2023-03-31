@@ -6,26 +6,30 @@ Tweeter is a simple, single-page AJAX - based Twitter clone that uses jQuery,HTM
 
 1. Final page 
 
-<img width="1470" alt="finalpage" src="https://user-images.githubusercontent.com/121919958/229194969-783ca449-417e-45c9-b028-460e88db3c0c.png">
+<img width="1470" alt="finalpage" src="https://user-images.githubusercontent.com/121919958/229207007-d0d5167f-2b62-4fe4-adeb-5107bfb5afa7.png">
 
 
 2. New Tweet 
 
-<img width="1465" alt="newtweet" src="https://user-images.githubusercontent.com/121919958/229197145-b90dd461-ed77-4c59-ac9f-c681aea63542.png">
+<img width="1469" alt="newtweet" src="https://user-images.githubusercontent.com/121919958/229207063-2449894c-8143-4762-bfe6-abcadb5f2d30.png">
+
 
 
 3.Display Validation Error check
 
-<img width="1470" alt="Validationcheck" src="https://user-images.githubusercontent.com/121919958/229197240-fb5d108a-00d2-47e0-b250-aa4c7b04698f.png">
+<img width="1468" alt="validationcheck" src="https://user-images.githubusercontent.com/121919958/229207111-f8f0cdac-5125-4a09-b9e9-9610e90e0e9e.png">
+
 
 4. Cross Site Scripting (XSS checking)
 
-<img width="1469" alt="xsschecking" src="https://user-images.githubusercontent.com/121919958/229197314-4422d90d-9222-45a4-b77b-5bc1703d9e8c.png">
+<img width="1461" alt="xsscheck" src="https://user-images.githubusercontent.com/121919958/229207144-13462f6d-653e-4c59-b539-d01d6296e0ed.png">
+
 
 
 5. iPhone 12 pro display
 
-<img width="789" alt="iphone12pro" src="https://user-images.githubusercontent.com/121919958/229197374-5e79acfd-9cb4-416d-b534-5fb75e2e7bd4.png">
+<img width="971" alt="iphone12pro" src="https://user-images.githubusercontent.com/121919958/229207192-453f0362-f978-4644-a113-29c9ab2d1cd7.png">
+
 
 
 ## Getting Started
